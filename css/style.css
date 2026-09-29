@@ -63,3 +63,10 @@ h3{color:var(--navy)}
   .panel{padding:17px}
   .button{width:100%;text-align:center}
 }
+
+.day-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.compact-button{width:auto}
+@media(max-width:700px){
+  .day-nav{align-items:stretch}
+  .day-nav .compact-button{width:auto;min-width:8.5rem}
+}

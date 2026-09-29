@@ -46,7 +46,7 @@ function card(e,s,isLatest){
     <p class="muted">${jpDate(e.date)}</p>
     <div class="meta"><span class="badge">知識5題＋演習1題</span><span class="status ${cls}">${label}</span></div>
     ${e.description?`<p>${esc(e.description)}</p>`:""}
-    <a class="button" href="day.html?day=${e.day}">${s.completed?"もう一度解く":(s.currentStep>0?"続きから":"問題を解く")}</a>
+    <a class="button" href="day.html?day=${e.day}${s.completed?"&restart=1":""}">${s.completed?"もう一度解く":(s.currentStep>0?"続きから":"問題を解く")}</a>
   </article>`;
 }
 init();

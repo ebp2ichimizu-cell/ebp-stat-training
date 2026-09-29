@@ -14,6 +14,7 @@ function save(){
   localStorage.setItem(KEY,JSON.stringify(stateAll));
 }
 function getDay(){return Number(new URLSearchParams(location.search).get("day"));}
+function shouldRestart(){return new URLSearchParams(location.search).get("restart")==="1";}
 
 async function init(){
   const day=getDay();
@@ -22,6 +23,13 @@ async function init(){
   if(!entry){document.getElementById("questionArea").innerHTML="<p>Dayが見つかりません。</p>";return;}
   data=await fetch(entry.file).then(r=>r.json());
   stateAll=loadAll();
+
+  if(shouldRestart()){
+    delete stateAll[data.day];
+    localStorage.setItem(KEY,JSON.stringify(stateAll));
+    history.replaceState(null,"",`day.html?day=${data.day}`);
+  }
+
   state=stateAll[data.day]||{answers:{},score:0,currentStep:0,completed:false,maxScore:0,order:{}};
 
   steps=(data.questions||[]).map(q=>({kind:"question",...q}));
@@ -34,6 +42,10 @@ async function init(){
     ${data.pdf_url?`<a class="button secondary" href="${esc(data.pdf_url)}" target="_blank" rel="noopener">PDF教材</a>`:""}
     ${data.excel_url?`<a class="button secondary" href="${esc(data.excel_url)}" target="_blank" rel="noopener">Excel演習</a>`:""}
   </div>`;
+  document.getElementById("interruptButton")?.addEventListener("click",()=>{
+    save();
+    location.href="index.html";
+  });
   render();
 }
 
