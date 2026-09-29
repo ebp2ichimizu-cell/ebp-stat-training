@@ -82,3 +82,22 @@ h3{color:var(--navy)}
   background:#fff;
 }
 .input-block textarea{resize:vertical}
+
+/* v1.4: preserve the former Statistics header/logo style */
+.stat-legacy-header{background:#fff;color:#1f2940;padding:34px 0 20px;border-bottom:1px solid #d6dce2}
+.stat-logo{display:block;width:170px;height:auto;margin:0 0 34px}
+.stat-top-nav{display:flex;gap:44px;align-items:flex-end}
+.stat-top-nav a{color:#25324a;text-decoration:none;font-size:1.35rem;padding-bottom:12px}
+.stat-top-nav a.active{font-weight:700;border-bottom:4px solid #9d3447}
+.stat-top-nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.stat-footer{background:#f5f6f7;color:#526276;padding:34px 0 46px;border-top:1px solid #d6dce2}
+.stat-footer h2{color:#223047;margin:.1rem 0 .9rem}
+.stat-footer p{margin:.55rem 0}
+.stat-footer a{color:#223047;font-weight:700;text-underline-offset:3px}
+.footer-rule{border:0;border-top:1px solid #d6dce2;margin:28px 0}
+@media(max-width:700px){
+  .stat-legacy-header{padding-top:24px}
+  .stat-logo{width:118px;margin-bottom:26px}
+  .stat-top-nav{gap:32px}
+  .stat-top-nav a{font-size:1.12rem}
+}

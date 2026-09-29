@@ -8,11 +8,13 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="site-header">
+<header class="site-header stat-legacy-header">
   <div class="container">
-    <p class="eyebrow">ICHIMIZU-KAI</p>
-    <h1>EBP統計トレーニング</h1>
-    <p class="lead">犯罪予防・EBPに役立つ知識と統計を、一日ずつ。</p>
+    <img class="stat-logo" src="assets/statistics-logo.png" alt="Statistics いちみず会">
+    <nav class="stat-top-nav" aria-label="主要メニュー">
+      <a class="active" href="#days">問題を解く</a>
+      <a href="#downloads">教材ダウンロード</a>
+    </nav>
   </div>
 </header>
 
@@ -38,13 +40,13 @@
     </div>
   </section>
 
-  <section class="panel">
+  <section class="panel" id="days">
     <p class="kicker">DAYS</p>
     <h2>Day一覧</h2>
     <div id="dayList"></div>
   </section>
 
-  <section class="panel compact">
+  <section class="panel compact" id="downloads">
     <p class="kicker">ABOUT</p>
     <h2>使い方</h2>
     <p>問題はブラウザ上で回答できます。回答途中でも同じ端末・ブラウザなら自動保存され、続きから再開できます。選択肢は表示時に並び替えられますが、正答判定はIDで管理します。</p>
@@ -52,7 +54,20 @@
   </section>
 </main>
 
-<footer class="site-footer"><div class="container"><p>EBP統計トレーニング / いちみず会</p></div></footer>
+<footer class="site-footer stat-footer">
+  <div class="container">
+    <section class="footer-section">
+      <h2>制作について</h2>
+      <p>問題・解説はChatGPTを用いて作成しています。提供教材をもとに選択式へ整え、数値・解説を確認して掲載しています。</p>
+    </section>
+    <hr class="footer-rule">
+    <section class="footer-section">
+      <h2>お問い合わせ</h2>
+      <p>サイト管理者：いちみず会事務局（元奈良県警察　草尾祐樹）</p>
+      <p>連絡先：<a href="mailto:ebp2.ichimizu@gmail.com">ebp2.ichimizu@gmail.com</a></p>
+    </section>
+  </div>
+</footer>
 <script src="js/app.js"></script>
 </body>
 </html>
