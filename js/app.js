@@ -28,13 +28,38 @@ async function init(){
   const latest=entries[0];
   const ls=state[latest.day]||{};
   document.getElementById("currentDay").innerHTML=card(latest,ls,true);
-  document.getElementById("dayList").innerHTML=entries.map(e=>card(e,state[e.day]||{},false)).join("");
+  document.getElementById("dayList").innerHTML=groupedDayList(entries,state);
 
   document.getElementById("resetAll").addEventListener("click",()=>{
     if(confirm("このブラウザに保存された学習履歴をすべて削除しますか？")){
       localStorage.removeItem(KEY); location.reload();
     }
   });
+}
+
+
+function groupedDayList(entries,state){
+  const groups=new Map();
+
+  entries.forEach(e=>{
+    const start=Math.floor((e.day-1)/10)*10+1;
+    const end=start+9;
+    const key=`${start}-${end}`;
+    if(!groups.has(key)) groups.set(key,{start,end,items:[]});
+    groups.get(key).items.push(e);
+  });
+
+  return [...groups.values()]
+    .sort((a,b)=>b.start-a.start)
+    .map(group=>{
+      const items=[...group.items].sort((a,b)=>a.day-b.day);
+      return `<details class="day-range">
+        <summary>Day${group.start}〜Day${group.end}</summary>
+        <div class="day-range-grid">
+          ${items.map(e=>card(e,state[e.day]||{},false)).join("")}
+        </div>
+      </details>`;
+    }).join("");
 }
 
 function card(e,s,isLatest){
