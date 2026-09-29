@@ -1,0 +1,64 @@
+{
+  "day": 1,
+  "date": "2026-09-17",
+  "title": "防犯教室を実施した地区では、自転車盗が減ったのか？",
+  "pdf_url": "",
+  "excel_url": "https://docs.google.com/spreadsheets/d/1MdJmH0hlUQ6iH4u5KSV-MK6C7vOp2if6/edit?usp=drivesdk",
+  "questions": [],
+  "exercise": {
+    "title": "Excel演習｜観察された変化と因果効果を分ける",
+    "objective": "実施前後の平均・合計・減少率を計算し、前後差と因果効果を区別します。",
+    "description": "元のDriveフォルダにはDay1のPDFはなく、Excel演習教材のみ収録されています。6地区の学習用データを使います。",
+    "steps": [
+      {
+        "id": "D01-E01-1",
+        "type": "number",
+        "question": "実施前6地区の平均値を入力してください。",
+        "correct_value": 20.0,
+        "tolerance": 0.01,
+        "step": "0.01",
+        "explanation": "実施前平均は20.00件です。"
+      },
+      {
+        "id": "D01-E01-2",
+        "type": "number",
+        "question": "実施後6地区の平均値を入力してください。",
+        "correct_value": 14.67,
+        "tolerance": 0.01,
+        "step": "0.01",
+        "explanation": "実施後平均は14.67件です。"
+      },
+      {
+        "id": "D01-E01-3",
+        "type": "text",
+        "question": "各地区の減少数を確認し、A〜Fの順に記述してください。",
+        "model_answer": "A 6件、B 3件、C 8件、D 1件、E 5件、F 9件。",
+        "explanation": "Excelの減少数列は「実施前－実施後」で確認します。"
+      },
+      {
+        "id": "D01-E01-4",
+        "type": "number",
+        "question": "6地区全体の減少率（％）を入力してください。",
+        "correct_value": 26.7,
+        "tolerance": 0.1,
+        "step": "0.1",
+        "unit": "％",
+        "explanation": "実施前合計120件、実施後合計88件なので、減少率は26.7％です。"
+      },
+      {
+        "id": "D01-E01-5",
+        "type": "text",
+        "question": "実施前・実施後を比較する棒グラフを作成し、見えた特徴を記述してください。",
+        "model_answer": "各地区の実施前・実施後を同じ尺度で並べ、全地区で実施後件数が低いことを確認します。",
+        "explanation": "グラフは変化の確認に有用ですが、それだけで因果効果は証明できません。"
+      },
+      {
+        "id": "D01-E01-6",
+        "type": "text",
+        "question": "『防犯教室によって自転車盗が減少した』と結論づけてよいか、理由を書いてください。",
+        "model_answer": "この前後データだけでは因果効果とは断定できません。比較群がなく、季節性、平均への回帰、他施策など別の要因を除けないためです。",
+        "explanation": "観察された前後差と、介入による因果効果を区別します。"
+      }
+    ]
+  }
+}

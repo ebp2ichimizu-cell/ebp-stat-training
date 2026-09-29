@@ -74,3 +74,12 @@ ChatGPT Sitesに依存せず、GitHub Pagesで継続運用できる統計演習�
 
 ## v1.4 表示修正
 添付画像の既存ロゴ・上部デザインを基準にし、下部のみ「制作について」→「お問い合わせ」を追加。メールは mailto:ebp2.ichimizu@gmail.com。
+
+## v1.5 既存Day移植
+Google Driveの既存教材を基準に、Day1〜Day11を掲載。
+- Day2〜Day11：PDF＋演習ExcelへのDriveリンク
+- Day1：DriveにPDFが存在しないため、Excel演習のみ
+- Day3〜Day11：PDFの問題編・解答解説編をオンライン問題へ移植
+- Day2：元教材が記述式中心のため、記述回答＋回答例の自己確認方式
+- Day1：Excel教材の6課題をオンライン演習化
+- 単答・複数回答・数値入力・記述回答・途中保存・中断・再開を維持

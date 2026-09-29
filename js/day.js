@@ -107,11 +107,24 @@ function choiceBlock(item, answered){
 
 function questionHtml(q){
   const answered=state.answers[q.id];
-  return `<p class="kicker">${q.type==="multiple"?"複数回答":"単一選択"}</p>
+  let body="";
+
+  if(q.type==="single" || q.type==="multiple"){
+    body=choiceBlock(q,answered);
+  }else if(q.type==="number"){
+    body=`<label class="input-block"><span>${esc(q.input_label||"数値を入力")}</span>
+      <input id="numberAnswer" type="number" step="${esc(q.step||"any")}" value="${answered?.value??""}" ${answered?"disabled":""}></label>
+      ${q.unit?`<p class="muted">単位：${esc(q.unit)}</p>`:""}`;
+  }else if(q.type==="text"){
+    body=`<label class="input-block"><span>${esc(q.input_label||"回答を入力")}</span>
+      <textarea id="textAnswer" rows="6" ${answered?"disabled":""}>${esc(answered?.value||"")}</textarea></label>`;
+  }
+
+  return `<p class="kicker">${q.type==="multiple"?"複数回答":q.type==="single"?"単一選択":q.type==="number"?"数値入力":"記述回答"}</p>
   <h2>${esc(q.title||"問題")}</h2>
   <p>${esc(q.question)}</p>
   ${q.note?`<div class="exercise-note">${esc(q.note)}</div>`:""}
-  ${choiceBlock(q,answered)}
+  ${body}
   ${answered?feedbackHtml(q,answered.correct):`<button class="button" id="submitAnswer">回答を確定</button>`}
   ${answered?`<button class="button" id="nextStep">${current===steps.length-1?"結果を見る":"次へ"}</button>`:""}`;
 }
@@ -227,7 +240,11 @@ function bind(){
   const step=steps[current];
 
   document.getElementById("submitAnswer")?.addEventListener("click",()=>{
-    commitAnswer(step,checkChoice(step));
+    let result=null;
+    if(step.type==="single" || step.type==="multiple") result=checkChoice(step);
+    else if(step.type==="number") result=checkNumber(step);
+    else if(step.type==="text") result=checkText(step);
+    commitAnswer(step,result);
   });
 
   document.getElementById("submitExerciseStep")?.addEventListener("click",()=>{

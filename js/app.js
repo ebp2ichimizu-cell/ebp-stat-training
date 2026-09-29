@@ -44,7 +44,7 @@ function card(e,s,isLatest){
   return `<article class="day-card">
     <h3>Day ${String(e.day).padStart(2,"0")}｜${esc(e.title||"")}</h3>
     <p class="muted">${jpDate(e.date)}</p>
-    <div class="meta"><span class="badge">知識5題＋演習1題</span><span class="status ${cls}">${label}</span></div>
+    <div class="meta"><span class="badge">${esc(e.format_label||"知識5題＋演習1題")}</span><span class="status ${cls}">${label}</span></div>
     ${e.description?`<p>${esc(e.description)}</p>`:""}
     <a class="button" href="day.html?day=${e.day}${s.completed?"&restart=1":""}">${s.completed?"もう一度解く":(s.currentStep>0?"続きから":"問題を解く")}</a>
   </article>`;
