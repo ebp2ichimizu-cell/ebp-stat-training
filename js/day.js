@@ -71,7 +71,7 @@ function questionHtml(q){
   <p>${esc(q.question)}</p>
   ${q.note?`<div class="exercise-note">${esc(q.note)}</div>`:""}
   <div class="choice-list">
-  ${choices.map(c=>`<label class="choice"><input type="${multi?"checkbox":"radio"}" name="${name}" value="${esc(c.id)}" ${answered?.selected?.includes(c.id)?"checked":""}> <span>${esc(c.text)}</span></label>`).join("")}
+  ${choices.map((c,i)=>`<label class="choice"><input type="${multi?"checkbox":"radio"}" name="${name}" value="${esc(c.id)}" ${answered?.selected?.includes(c.id)?"checked":""}> <span><strong>${"ABCDEFGHIJKLMNOPQRSTUVWXYZ"[i]}.</strong> ${esc(c.text)}</span></label>`).join("")}
   </div>
   ${answered?feedbackHtml(q,answered.correct):`<button class="button" id="submitAnswer">回答を確定</button>`}
   ${answered?`<button class="button" id="nextStep">${current===steps.length-1?"結果を見る":"次へ"}</button>`:""}`;
@@ -88,10 +88,24 @@ function exerciseHtml(e){
   ${answered?`<button class="button" id="nextStep">結果を見る</button>`:""}`;
 }
 
+function displayedCorrectAnswer(item){
+  if(item.kind==="exercise") return item.answer || "";
+  const order = state.order[item.id] || item.choices.map(c=>c.id);
+  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const correctIds = new Set(item.correct_answers || []);
+  const shown = order.map((id,index)=>{
+    const choice = item.choices.find(c=>c.id===id);
+    return {id,index,choice};
+  }).filter(x=>x.choice && correctIds.has(x.id));
+  if(!shown.length) return item.answer || "";
+  return shown.map(x=>`${labels[x.index]}. ${x.choice.text}`).join(" / ");
+}
+
 function feedbackHtml(item,correct){
+  const answerText = displayedCorrectAnswer(item);
   return `<div class="feedback ${correct?"correct":"incorrect"}">
     <strong>${item.kind==="exercise"?"演習の解説":(correct?"正解":"不正解")}</strong>
-    ${item.answer?`<p><strong>答え：</strong>${esc(item.answer)}</p>`:""}
+    ${answerText?`<p><strong>正答：</strong>${esc(answerText)}</p>`:""}
     ${item.explanation?`<p>${esc(item.explanation)}</p>`:""}
   </div>`;
 }
