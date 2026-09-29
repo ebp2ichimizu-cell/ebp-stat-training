@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>EBP統計トレーニング</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <p class="eyebrow">ICHIMIZU-KAI</p>
+    <h1>EBP統計トレーニング</h1>
+    <p class="lead">犯罪予防・EBPに役立つ知識と統計を、一日ずつ。</p>
+  </div>
+</header>
+
+<main class="container">
+  <section class="panel">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">CURRENT</p>
+        <h2>現在のDay</h2>
+      </div>
+      <button id="resetAll" class="text-button" type="button">学習履歴をリセット</button>
+    </div>
+    <div id="currentDay"></div>
+  </section>
+
+  <section class="panel">
+    <p class="kicker">PROGRESS</p>
+    <h2>学習進捗</h2>
+    <div class="stats-grid">
+      <div class="stat"><strong id="completedDays">0</strong><span>完了Day</span></div>
+      <div class="stat"><strong id="totalScore">0</strong><span>累積スコア</span></div>
+      <div class="stat"><strong id="totalPossible">0</strong><span>累積満点</span></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <p class="kicker">DAYS</p>
+    <h2>Day一覧</h2>
+    <div id="dayList"></div>
+  </section>
+
+  <section class="panel compact">
+    <p class="kicker">ABOUT</p>
+    <h2>使い方</h2>
+    <p>問題はブラウザ上で回答できます。回答途中でも同じ端末・ブラウザなら自動保存され、続きから再開できます。選択肢は表示時に並び替えられますが、正答判定はIDで管理します。</p>
+    <p class="muted">保存はこの端末・ブラウザ内のみです。別端末への同期や、ブラウザデータ削除後の復元には対応しません。</p>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container"><p>EBP統計トレーニング / いちみず会</p></div></footer>
+<script src="js/app.js"></script>
+</body>
+</html>
