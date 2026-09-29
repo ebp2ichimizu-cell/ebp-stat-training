@@ -3,9 +3,9 @@
     {
       "day": 1,
       "date": "2026-09-17",
-      "title": "防犯教室を実施した地区では、自転車盗が減ったのか？",
-      "description": "Driveに保存していた既存教材をGitHub版へ移植。",
-      "format_label": "Excel演習のみ（PDFなし）",
+      "title": "まず「数字を正しく比べる」",
+      "description": "知識5題＋Excel演習1題。観察された変化と因果効果を分ける基礎から始めます。",
+      "format_label": "知識5題＋演習1題",
       "file": "data/days/day1.json"
     },
     {
