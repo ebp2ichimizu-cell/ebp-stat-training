@@ -87,6 +87,14 @@
       "description": "Driveに保存していた既存教材をGitHub版へ移植。",
       "format_label": "知識5題＋演習1題",
       "file": "data/days/day11.json"
+    },
+    {
+      "day": 12,
+      "date": "2026-09-30",
+      "title": "比較群を使う介入前後比較：差の差の入口",
+      "description": "比較群の同時期変化を差し引く差の差をExcelで計算し、平行トレンド等の前提と因果解釈の限界を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day12.json"
     }
   ]
 }
