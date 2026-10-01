@@ -95,6 +95,14 @@
       "description": "比較群の同時期変化を差し引く差の差をExcelで計算し、平行トレンド等の前提と因果解釈の限界を学ぶ。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day12.json"
+    },
+    {
+      "day": 13,
+      "date": "2026-10-01",
+      "title": "一元配置分散分析：3種類の防犯広報を比較する",
+      "description": "3種類の独立した防犯広報条件をjamoviで比較し、ANOVA、効果量η²、Tukey事後比較とEBP上の解釈を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day13.json"
     }
   ]
 }
