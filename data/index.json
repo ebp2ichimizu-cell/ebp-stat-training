@@ -103,6 +103,14 @@
       "description": "3種類の独立した防犯広報条件をjamoviで比較し、ANOVA、効果量η²、Tukey事後比較とEBP上の解釈を学ぶ。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day13.json"
+    },
+    {
+      "day": 14,
+      "date": "2026-10-02",
+      "title": "2×2クロス集計とカイ二乗検定：関連の有無と因果を分ける",
+      "description": "架空データの2×2クロス集計から導入率、期待度数、χ²検定、φをExcelで計算し、観察的な関連と因果を区別する。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day14.json"
     }
   ]
 }
