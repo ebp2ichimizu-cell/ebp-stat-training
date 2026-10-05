@@ -111,6 +111,14 @@
       "description": "架空データの2×2クロス集計から導入率、期待度数、χ²検定、φをExcelで計算し、観察的な関連と因果を区別する。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day14.json"
+    },
+    {
+      "day": 15,
+      "date": "2026-10-05",
+      "title": "相対リスク・絶対リスク差・NNT：施策効果を実務の規模で読む",
+      "description": "Excelでリスク割合、RR、RD、NNT、95％信頼区間を計算。施策の統計的不確実性と実務規模を区別する。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day15.json"
     }
   ]
 }
