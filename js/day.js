@@ -17,6 +17,54 @@ function getDay(){return Number(new URLSearchParams(location.search).get("day"))
 function shouldRestart(){return new URLSearchParams(location.search).get("restart")==="1";}
 function jpLabel(i){return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[i] || String(i+1);}
 
+/*
+ * Legacy compatibility fixes (Day 1–15)
+ *
+ * Day 1–15 were authored when explanations sometimes referred to the original
+ * option letters (A/B/C...). Randomizing those old choices can therefore make
+ * the visible letter and the explanation disagree.
+ *
+ * For Day 1–15 only, choices are displayed in their original authored order.
+ * Day 16 onward continues to use randomized choice order. From Day 16 onward,
+ * explanations must not depend on fixed option letters.
+ *
+ * This function also restores ten legacy question/context omissions identified
+ * in the 2026-10-06 audit. It does not change correct_answers.
+ */
+function applyLegacyQuestionFixes(d){
+  if(!d || !Array.isArray(d.questions)) return;
+  const byId=Object.fromEntries(d.questions.map(q=>[q.id,q]));
+
+  if(d.day===3 && byId["D03-K03-Q2"]){
+    byId["D03-K03-Q2"].question=
+      "状況説明／データ 特殊詐欺被害リスクの簡易チェックを1,000人に実施しました。50人が『高リスク』と判定され、その後1か月に実際の被害が確認された人は全体で10人でした。被害者10人のうち8人は高リスク群、2人はそれ以外でした。 この結果の実務上の解釈として、最も適切なものはどれですか。";
+  }
+
+  if(d.day===5){
+    if(byId["D05-Q1-1"]) byId["D05-Q1-1"].question=
+      "防犯登録率が介入前60％、介入後75％でした。比較期間はいずれも同じ長さです。 介入前から介入後への変化として正しいものを1つ選んでください。";
+    if(byId["D05-Q1-2"]) byId["D05-Q1-2"].question=
+      "防犯登録率が介入前60％、介入後75％でした。比較期間はいずれも同じ長さです。 相対的な増加率として正しいものを1つ選んでください。";
+    if(byId["D05-Q2-1"]) byId["D05-Q2-1"].question=
+      "駅前駐輪場で自転車盗が多発しています。無施錠車が多く、夜間は管理者の巡回がなく、出入口から駐輪区画が見えにくい状態でした。 日常活動理論の観点から最も適切な説明を1つ選んでください。";
+    if(byId["D05-Q3-1"]) byId["D05-Q3-1"].question=
+      "自転車の二重ロックを促す広報文を検討しています。便益と損失を同程度の大きさで表現した場合を考えます。 損失回避を利用した表現として最も適切なものを1つ選んでください。";
+    if(byId["D05-Q4-1"]) byId["D05-Q4-1"].question=
+      "防犯教室を実施した地区では被害率が10％から7％へ低下しました。同期間、教室を実施しなかった比較地区でも9％から6％へ低下しました。 この結果から最も妥当な解釈を1つ選んでください。";
+    if(byId["D05-Q5-1"]) byId["D05-Q5-1"].question=
+      "大規模データを用いた分析で、施策後の通報処理時間が平均30.0分から29.8分へ0.2分短縮し、統計的には有意でした。 EBP実務上、追加で確認すべき事項として適切なものをすべて選んでください。";
+  }
+
+  if(d.day===14){
+    if(byId["D14-K1-1"]) byId["D14-K1-1"].question=
+      "状況説明／データ 駅前A地区で自転車盗対策を実施したところ、A地区内の認知件数は実施前6か月の42件から実施後6か月の25件へ減少しました。ただし、周辺地区や隣接時間帯の状況はまだ確認していません。 この段階で、犯罪の転移または利益の拡散を検討するために追加確認すべきものとして適切なものをすべて選んでください。";
+    if(byId["D14-K2-1"]) byId["D14-K2-1"].question=
+      "状況説明／データ 自治体と警察は、不審電話対策アプリの導入を促すため、『警察署長があなたと家族を守るために推薦します』というメッセージを検討しています。単に導入率が上がったかではなく、推薦者の肩書きが上乗せ効果を持つかを確かめたいと考えています。 推薦者の肩書きによる上乗せ効果を最も直接的に検証できる設計を1つ選んでください。";
+    if(byId["D14-K3-1"]) byId["D14-K3-1"].question=
+      "状況説明／データ ある防犯教室で、知識、リスク認知、不安感、相談意図、家族との会話、施錠行動など12指標を測定しました。分析後に、有意差が出た指標だけを成果として公表する案が出ています。 偶然の有意差を成果と誤認する危険を減らす対応として適切なものをすべて選んでください。";
+  }
+}
+
 async function init(){
   const day=getDay();
   const idx=await fetch("data/index.json").then(r=>r.json());
@@ -24,6 +72,7 @@ async function init(){
   if(!entry){document.getElementById("questionArea").innerHTML="<p>Dayが見つかりません。</p>";return;}
 
   data=await fetch(entry.file).then(r=>r.json());
+  applyLegacyQuestionFixes(data);
   stateAll=loadAll();
 
   if(shouldRestart()){
@@ -86,6 +135,20 @@ function updateProgress(){
 }
 
 function orderedChoices(q){
+  // Legacy Day 1–15: preserve authored order so historical explanations that
+  // refer to A/B/C... remain consistent. Existing randomized localStorage
+  // orders are overwritten with the original order.
+  if(data?.day<=15){
+    const original=(q.choices||[]).map(c=>c.id);
+    const saved=state.order[q.id]||[];
+    if(saved.join("|")!==original.join("|")){
+      state.order[q.id]=original;
+      save();
+    }
+    return q.choices||[];
+  }
+
+  // Day 16 onward: randomized display order. Explanations must be letter-free.
   if(!state.order[q.id]){
     state.order[q.id]=shuffle((q.choices||[]).map(c=>c.id));
     save();
