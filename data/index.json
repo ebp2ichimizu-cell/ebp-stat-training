@@ -119,6 +119,14 @@
       "description": "Excelでリスク割合、RR、RD、NNT、95％信頼区間を計算。施策の統計的不確実性と実務規模を区別する。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day15.json"
+    },
+    {
+      "day": 16,
+      "date": "2026-10-06",
+      "title": "独立2群のt検定：平均差・95％信頼区間・効果量を読む",
+      "description": "jamoviでWelchの独立2群t検定を行い、平均差、95％信頼区間、Cohen’s dを読み、統計的有意性と実務判断を分けて考える。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day16.json"
     }
   ]
 }
