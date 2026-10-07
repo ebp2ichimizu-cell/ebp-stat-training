@@ -127,6 +127,14 @@
       "description": "jamoviでWelchの独立2群t検定を行い、平均差、95％信頼区間、Cohen’s dを読み、統計的有意性と実務判断を分けて考える。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day16.json"
+    },
+    {
+      "day": 17,
+      "date": "2026-10-07",
+      "title": "粗い集計に潜む交絡：層別化と直接標準化",
+      "description": "Excelで粗被害率、リスク層別被害率、直接標準化被害率を比較し、群のリスク構成による交絡と因果解釈の限界を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day17.json"
     }
   ]
 }
