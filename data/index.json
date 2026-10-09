@@ -143,6 +143,14 @@
       "description": "jamoviで介入後被害率を群と介入前被害率から重回帰し、調整後群差・95％信頼区間・モデル診断と因果解釈の限界を学ぶ。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day18.json"
+    },
+    {
+      "day": 19,
+      "date": "2026-10-09",
+      "title": "介入前後の変化を比較する：差の差（DID）の入門",
+      "description": "Excelで介入群と比較群の前後差から差の差（DID）を計算し、平行トレンド仮定と因果解釈の限界を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day19.json"
     }
   ]
 }
