@@ -159,6 +159,14 @@
       "description": "Excelで施策前8週の直線傾向を延長し、単純前後差と予測との差を比較して、反実仮想の仮定と因果解釈の限界を学ぶ。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day20.json"
+    },
+    {
+      "day": 21,
+      "date": "2026-10-13",
+      "title": "同じ対象者の前後差を調べる：対応のあるt検定",
+      "description": "jamoviで同一参加者20人の知識得点の前後差を対応のあるt検定で分析し、平均差・95％信頼区間・Cohen’s dzと因果解釈の限界を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day21.json"
     }
   ]
 }
