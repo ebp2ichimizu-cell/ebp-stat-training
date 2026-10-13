@@ -151,6 +151,14 @@
       "description": "Excelで介入群と比較群の前後差から差の差（DID）を計算し、平行トレンド仮定と因果解釈の限界を学ぶ。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day19.json"
+    },
+    {
+      "day": 20,
+      "date": "2026-10-12",
+      "title": "介入前の傾向を延長する：中断時系列の初歩",
+      "description": "Excelで施策前8週の直線傾向を延長し、単純前後差と予測との差を比較して、反実仮想の仮定と因果解釈の限界を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day20.json"
     }
   ]
 }
