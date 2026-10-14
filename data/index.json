@@ -167,6 +167,14 @@
       "description": "jamoviで同一参加者20人の知識得点の前後差を対応のあるt検定で分析し、平均差・95％信頼区間・Cohen’s dzと因果解釈の限界を学ぶ。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day21.json"
+    },
+    {
+      "day": 22,
+      "date": "2026-10-14",
+      "title": "分母をそろえて比べる：発生率・率比・95％信頼区間",
+      "description": "Excelで店舗営業時間を分母とする発生率、率差、率比、近似95％信頼区間を計算し、観測上の変化と因果効果の違いを学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day22.json"
     }
   ]
 }
