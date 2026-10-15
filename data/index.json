@@ -175,6 +175,14 @@
       "description": "Excelで店舗営業時間を分母とする発生率、率差、率比、近似95％信頼区間を計算し、観測上の変化と因果効果の違いを学ぶ。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day22.json"
+    },
+    {
+      "day": 23,
+      "date": "2026-10-15",
+      "title": "3群の平均を比べる：一元配置分散分析と事後比較",
+      "description": "jamoviで30人・3群の理解度得点を一元配置分散分析し、F値・η²・Tukey事後比較を実データに基づいて解釈する。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day23.json"
     }
   ]
 }
