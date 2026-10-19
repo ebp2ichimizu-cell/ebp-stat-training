@@ -183,6 +183,22 @@
       "description": "jamoviで30人・3群の理解度得点を一元配置分散分析し、F値・η²・Tukey事後比較を実データに基づいて解釈する。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day23.json"
+    },
+    {
+      "day": 24,
+      "date": "2026-10-16",
+      "title": "全体相関と層別相関：交絡を見抜く",
+      "description": "Excelで12地区の全体相関と住宅・繁華地区別の層別相関を計算し、地区類型による交絡と因果解釈の限界を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day24.json"
+    },
+    {
+      "day": 25,
+      "date": "2026-10-19",
+      "title": "介入前後比較の一歩先：差の差とその限界",
+      "description": "Excelで介入地区・比較地区の4期の自転車盗件数を用いて差の差（DID）と反実仮想を計算し、平行トレンドや波及・交絡の限界を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day25.json"
     }
   ]
 }
