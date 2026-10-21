@@ -199,6 +199,14 @@
       "description": "Excelで介入地区・比較地区の4期の自転車盗件数を用いて差の差（DID）と反実仮想を計算し、平行トレンドや波及・交絡の限界を学ぶ。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day25.json"
+    },
+    {
+      "day": 26,
+      "date": "2026-10-20",
+      "title": "同じ人の前後を比べる：対応ありt検定と因果推論の境界",
+      "description": "jamoviで同じ10人の研修前後の得点を対応ありt検定し、平均差・95％信頼区間・p値と因果推論の限界を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day26.json"
     }
   ]
 }
