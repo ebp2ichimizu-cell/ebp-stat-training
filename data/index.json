@@ -255,6 +255,30 @@
       "description": "架空の重回帰出力表で粗係数と調整係数の符号変化を比較し、交絡と未測定交絡の限界を学ぶ。",
       "format_label": "知識3題＋演習1題",
       "file": "data/days/day32.json"
+    },
+    {
+      "day": 33,
+      "date": "2026-10-29",
+      "title": "平均効果の裏側―2×2分散分析で交互作用を読む",
+      "description": "jamoviでメッセージ×リスク群の2×2分散分析を行い、4条件の平均差と交互作用・因果解釈の限界を学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day33.json"
+    },
+    {
+      "day": 34,
+      "date": "2026-10-30",
+      "title": "予測モデルを実務で評価する―MAE・RMSE・検証データ",
+      "description": "8地区の実測・予測件数からMAEとRMSEを計算し、独立検証と予測・因果の違いを学ぶ。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day34.json"
+    },
+    {
+      "day": 35,
+      "date": "2026-11-02",
+      "title": "分類モデルの閾値を選ぶ―混同行列・感度・特異度・適合率",
+      "description": "Excelの混同行列から感度・特異度・適合率・正解率を計算し、閾値設定と誤判定コストを考える。",
+      "format_label": "知識3題＋演習1題",
+      "file": "data/days/day35.json"
     }
   ]
 }
