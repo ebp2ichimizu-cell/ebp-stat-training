@@ -1,0 +1,278 @@
+{
+  "day": 36,
+  "date": "2026-11-03",
+  "title": "複数質問を1尺度にまとめる前に―Cronbachのα・逆転項目・項目分析",
+  "pdf_url": "https://drive.google.com/file/d/1_tPbH3Sj6cX7UmRRX3sU0D85ffaZpc4l/view?usp=drivesdk",
+  "questions": [
+    {
+      "id": "D36-Q1-1",
+      "type": "single",
+      "question": "Cronbachのαが主に確認するものはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "妥当性の保証"
+        },
+        {
+          "id": "b",
+          "text": "複数項目の内部一貫性"
+        },
+        {
+          "id": "c",
+          "text": "因果効果"
+        },
+        {
+          "id": "d",
+          "text": "標本代表性"
+        },
+        {
+          "id": "e",
+          "text": "平均水準"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "explanation": "Cronbachのαは内部一貫性の指標であり、妥当性や因果効果を直接示さない。"
+    },
+    {
+      "id": "D36-Q2-1",
+      "type": "single",
+      "question": "1〜5点尺度の逆転項目を処理する方法はどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "そのまま"
+        },
+        {
+          "id": "b",
+          "text": "5倍する"
+        },
+        {
+          "id": "c",
+          "text": "平均に置換"
+        },
+        {
+          "id": "d",
+          "text": "6−元得点"
+        },
+        {
+          "id": "e",
+          "text": "必ず削除"
+        }
+      ],
+      "correct_answers": [
+        "d"
+      ],
+      "explanation": "1〜5点尺度では6−元得点で逆転する。"
+    },
+    {
+      "id": "D36-Q3-1",
+      "type": "multiple",
+      "question": "尺度の信頼性・妥当性について適切なものをすべて選んでください。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "妥当性は別に確認する"
+        },
+        {
+          "id": "b",
+          "text": "項目は多いほど無条件に良い"
+        },
+        {
+          "id": "c",
+          "text": "項目が重複していてもαは上がり得る"
+        },
+        {
+          "id": "d",
+          "text": "対象集団への適合を確認する"
+        },
+        {
+          "id": "e",
+          "text": "αが高ければ因果関係が成立する"
+        },
+        {
+          "id": "f",
+          "text": "信頼性と妥当性を区別する"
+        }
+      ],
+      "correct_answers": [
+        "a",
+        "c",
+        "d",
+        "f"
+      ],
+      "explanation": "高いαだけでは妥当性は保証されず、重複項目でも上がり得る。"
+    }
+  ],
+  "exercise": {
+    "title": "jamovi演習｜逆転項目とCronbachのα",
+    "objective": "12人の4項目データを使い逆転項目の処理とCronbachのαを学び、信頼性と妥当性を区別する。",
+    "description": "【架空データ】12人×4項目（Q1〜Q4）。Q4は逆転項目。PDF掲載表または添付Excelをjamoviに取り込み、逆転処理前後のCronbachのαを比較する。1〜5点の逆転式は6−Q4。元データの再計算値は逆転前α≈−0.302、逆転後α≈0.962。PDFの選択肢には誤記があるため、Web版のみ数値を訂正。",
+    "steps": [
+      {
+        "id": "D36-EX1-1",
+        "type": "single",
+        "question": "Q4=2を逆転処理すると何点か。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "1"
+          },
+          {
+            "id": "b",
+            "text": "2"
+          },
+          {
+            "id": "c",
+            "text": "3"
+          },
+          {
+            "id": "d",
+            "text": "4"
+          },
+          {
+            "id": "e",
+            "text": "5"
+          }
+        ],
+        "correct_answers": [
+          "d"
+        ],
+        "explanation": "6−2=4点。"
+      },
+      {
+        "id": "D36-EX1-2",
+        "type": "single",
+        "question": "Q4を逆転処理する前のCronbachのαは約いくつか。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "−0.30"
+          },
+          {
+            "id": "b",
+            "text": "0.12"
+          },
+          {
+            "id": "c",
+            "text": "0.48"
+          },
+          {
+            "id": "d",
+            "text": "0.72"
+          },
+          {
+            "id": "e",
+            "text": "0.98"
+          }
+        ],
+        "correct_answers": [
+          "a"
+        ],
+        "explanation": "12人の4項目データから計算すると約−0.302。PDFの選択肢A「−0.23」は誤記のためWeb版では訂正。"
+      },
+      {
+        "id": "D36-EX1-3",
+        "type": "single",
+        "question": "Q4を逆転処理した後のCronbachのαは約いくつか。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "0.23"
+          },
+          {
+            "id": "b",
+            "text": "0.51"
+          },
+          {
+            "id": "c",
+            "text": "0.71"
+          },
+          {
+            "id": "d",
+            "text": "0.84"
+          },
+          {
+            "id": "e",
+            "text": "0.96"
+          }
+        ],
+        "correct_answers": [
+          "e"
+        ],
+        "explanation": "Q4を6−Q4で逆転後、α≈0.962。PDFの選択肢E「0.98」は誤記のためWeb版では訂正。"
+      },
+      {
+        "id": "D36-EX1-4",
+        "type": "single",
+        "question": "逆転処理前にαが低い主な理由はどれか。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Q4の方向をそろえていない"
+          },
+          {
+            "id": "b",
+            "text": "n=12なら必ず負になる"
+          },
+          {
+            "id": "c",
+            "text": "1〜5点尺度だから"
+          },
+          {
+            "id": "d",
+            "text": "4項目では計算できない"
+          },
+          {
+            "id": "e",
+            "text": "平均を計算していない"
+          }
+        ],
+        "correct_answers": [
+          "a"
+        ],
+        "explanation": "Q4が他の項目と反対方向であり、得点方向が不統一。"
+      },
+      {
+        "id": "D36-EX1-5",
+        "type": "multiple",
+        "question": "尺度を実務に用いる前に適切な確認をすべて選んでください。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "項目の方向を確認"
+          },
+          {
+            "id": "b",
+            "text": "妥当性の確認は不要"
+          },
+          {
+            "id": "c",
+            "text": "測定概念の整合性を確認"
+          },
+          {
+            "id": "d",
+            "text": "項目削除には理論的理由を持つ"
+          },
+          {
+            "id": "e",
+            "text": "重複項目を無制限に追加"
+          },
+          {
+            "id": "f",
+            "text": "対象集団が変われば再確認"
+          }
+        ],
+        "correct_answers": [
+          "a",
+          "c",
+          "d",
+          "f"
+        ],
+        "explanation": "信頼性に加えて内容・理論・対象集団への適合を確認する。"
+      }
+    ]
+  },
+  "excel_url": "https://docs.google.com/spreadsheets/d/1zWFggricK3k4mHeAj8gM4OpL7Ef3Fi_V/edit?usp=drivesdk"
+}

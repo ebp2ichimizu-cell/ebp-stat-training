@@ -1,0 +1,309 @@
+{
+  "day": 37,
+  "date": "2026-11-04",
+  "title": "介入前後の差を比較する―差分の差分と平行トレンド",
+  "pdf_url": "https://drive.google.com/file/d/1lQJWfF7vCRefoodrqJ1pwTmlbNGnvCj5/view?usp=drivesdk",
+  "questions": [
+    {
+      "id": "D37-Q1-1",
+      "type": "single",
+      "question": "差分の差分（DID）の考え方として適切なのはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "介入後だけを比較"
+        },
+        {
+          "id": "b",
+          "text": "比較群の共通時期変化を差し引く"
+        },
+        {
+          "id": "c",
+          "text": "交絡をすべて除去する"
+        },
+        {
+          "id": "d",
+          "text": "必ず有意になる"
+        },
+        {
+          "id": "e",
+          "text": "介入前データは不要"
+        }
+      ],
+      "correct_answers": [
+        "b"
+      ],
+      "explanation": "比較群の変化を差し引くが、未測定交絡がすべて除去されるわけではない。"
+    },
+    {
+      "id": "D37-Q2-1",
+      "type": "multiple",
+      "question": "平行トレンド仮定の検討で適切なものをすべて選んでください。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "介入前の複数時点を確認"
+        },
+        {
+          "id": "b",
+          "text": "異なる事前傾向に注意"
+        },
+        {
+          "id": "c",
+          "text": "介入後平均が同じなら十分"
+        },
+        {
+          "id": "d",
+          "text": "同時期の別施策を確認"
+        },
+        {
+          "id": "e",
+          "text": "介入前傾向の一致で完全証明"
+        },
+        {
+          "id": "f",
+          "text": "比較群の選定を検討"
+        }
+      ],
+      "correct_answers": [
+        "a",
+        "b",
+        "d",
+        "f"
+      ],
+      "explanation": "平行トレンドは介入がなかった場合の反実仮想に関する仮定であり、事前の一致は完全な証明ではない。"
+    },
+    {
+      "id": "D37-Q3-1",
+      "type": "single",
+      "question": "DIDの結果をEBPで判断する際、最も適切なのはどれか。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "効果が確定したとみなす"
+        },
+        {
+          "id": "b",
+          "text": "有意性だけを見る"
+        },
+        {
+          "id": "c",
+          "text": "差・不確実性・比較可能性・同時期要因・実務的大きさを確認"
+        },
+        {
+          "id": "d",
+          "text": "限界はない"
+        },
+        {
+          "id": "e",
+          "text": "短期結果は必ず信頼できる"
+        }
+      ],
+      "correct_answers": [
+        "c"
+      ],
+      "explanation": "差の大きさ、推定の不確実性、比較可能性、同時期要因、実務的意義を併せて評価する。"
+    }
+  ],
+  "exercise": {
+    "title": "Excel演習｜地区別データからDIDを計算",
+    "objective": "8地区の介入前2時点と介入後1時点からDIDを計算し、平行トレンド仮定と限界を考える。",
+    "description": "【架空データ】介入群A〜Dの平均は2期前11.0、直前10.0、介入後7.0件/週。比較群E〜Hは2期前10.0、直前9.0、介入後8.0件/週。DID＝(7−10)−(8−9)＝−2件/週。添付Excelで群別平均と折れ線を確認する。",
+    "steps": [
+      {
+        "id": "D37-EX1-1",
+        "type": "single",
+        "question": "介入群の直前から介入後への平均変化は。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "−4.0"
+          },
+          {
+            "id": "b",
+            "text": "−3.0"
+          },
+          {
+            "id": "c",
+            "text": "−2.0"
+          },
+          {
+            "id": "d",
+            "text": "−1.0"
+          },
+          {
+            "id": "e",
+            "text": "＋1.0"
+          }
+        ],
+        "correct_answers": [
+          "b"
+        ],
+        "explanation": "介入群10.0→7.0で−3.0件/週。"
+      },
+      {
+        "id": "D37-EX1-2",
+        "type": "single",
+        "question": "比較群の直前から介入後への平均変化は。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "−3.0"
+          },
+          {
+            "id": "b",
+            "text": "−2.0"
+          },
+          {
+            "id": "c",
+            "text": "−1.0"
+          },
+          {
+            "id": "d",
+            "text": "0.0"
+          },
+          {
+            "id": "e",
+            "text": "＋1.0"
+          }
+        ],
+        "correct_answers": [
+          "c"
+        ],
+        "explanation": "比較群9.0→8.0で−1.0件/週。"
+      },
+      {
+        "id": "D37-EX1-3",
+        "type": "single",
+        "question": "DIDの推定値は。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "−4.0"
+          },
+          {
+            "id": "b",
+            "text": "−3.0"
+          },
+          {
+            "id": "c",
+            "text": "−2.0"
+          },
+          {
+            "id": "d",
+            "text": "−1.0"
+          },
+          {
+            "id": "e",
+            "text": "＋2.0"
+          }
+        ],
+        "correct_answers": [
+          "c"
+        ],
+        "explanation": "(−3.0)−(−1.0)＝−2.0件/週。"
+      },
+      {
+        "id": "D37-EX1-4",
+        "type": "single",
+        "question": "2期前から直前への事前変化は。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "両群とも−1.0"
+          },
+          {
+            "id": "b",
+            "text": "介入群−3、比較群−1"
+          },
+          {
+            "id": "c",
+            "text": "介入群＋1、比較群−1"
+          },
+          {
+            "id": "d",
+            "text": "両群0"
+          },
+          {
+            "id": "e",
+            "text": "計算不能"
+          }
+        ],
+        "correct_answers": [
+          "a"
+        ],
+        "explanation": "介入群11→10、比較群10→9でいずれも−1.0。"
+      },
+      {
+        "id": "D37-EX1-5",
+        "type": "multiple",
+        "question": "DIDの結果を読む際の適切な解釈をすべて選んでください。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "追加的に2件/週減少した推定"
+          },
+          {
+            "id": "b",
+            "text": "事前傾向の一致は支持材料"
+          },
+          {
+            "id": "c",
+            "text": "同時期要因の確認は不要"
+          },
+          {
+            "id": "d",
+            "text": "少数地区の推定に注意"
+          },
+          {
+            "id": "e",
+            "text": "効果の持続性は不明"
+          },
+          {
+            "id": "f",
+            "text": "比較群の不適切さは影響しない"
+          }
+        ],
+        "correct_answers": [
+          "a",
+          "b",
+          "d",
+          "e"
+        ],
+        "explanation": "少数地区・介入後1時点のため、同時期要因や持続性は未確認。"
+      },
+      {
+        "id": "D37-EX1-6",
+        "type": "single",
+        "question": "群別の事前傾向と介入後の乖離を可視化するのに適切なのは。",
+        "choices": [
+          {
+            "id": "a",
+            "text": "群別平均の2本の折れ線"
+          },
+          {
+            "id": "b",
+            "text": "円グラフ"
+          },
+          {
+            "id": "c",
+            "text": "地区名の棒グラフ"
+          },
+          {
+            "id": "d",
+            "text": "介入群のヒストグラム"
+          },
+          {
+            "id": "e",
+            "text": "累積度数"
+          }
+        ],
+        "correct_answers": [
+          "a"
+        ],
+        "explanation": "群別平均の折れ線で事前傾向と介入後の乖離を確認できる。"
+      }
+    ]
+  },
+  "excel_url": "https://docs.google.com/spreadsheets/d/1tlmcDf9wzmQUE5oArfB4KQbCiqn_hnEB/edit?usp=drivesdk"
+}
